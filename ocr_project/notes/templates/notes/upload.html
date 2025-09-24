@@ -5,3 +5,7 @@
     <button type="submit">Upload</button>
 </form>
 <a href="{% url 'note_list' %}">View Notes</a>
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
