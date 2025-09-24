@@ -1,0 +1,17 @@
+<h1>Notes</h1>
+<form method="get">
+    <input type="text" name="q" placeholder="Search text">
+    <button type="submit">Search</button>
+</form>
+<ul>
+    {% for note in notes %}
+    <li>
+        <h2>{{ note.title }}</h2>
+        <img src="{{ note.image.url }}" width="200">
+        <p>{{ note.text }}</p>
+    </li>
+    {% empty %}
+    <li>No notes found</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'upload_note' %}">Upload a new note</a>
